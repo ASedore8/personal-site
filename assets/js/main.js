@@ -23,6 +23,8 @@
 
 let codeSnip = document.getElementById("popup")
 var card = document.getElementsByClassName("card")
+var code = document.getElementById("code")
+var activeCode
 
 for (var i = 0; i < card.length; i++) {
 	card[i].addEventListener("click", function () {
@@ -34,21 +36,24 @@ for (var i = 0; i < card.length; i++) {
 				source = "./images/sitecode.png"
 				break
 		}
-		var code = document.getElementById("code")
-		code.src = source
 
-		if (codeSnip.className === "closed") {
-			codeSnip.className = "opened"
-			codeSnip.style.height = "250px"
-		} else if (codeSnip.className === "opened") {
-			codeSnip.style.visibility = "hidden"
-			codeSnip.style.height = "1px"
-			codeSnip.style.opacity = "0"
-			setTimeout(() => {
+		if (activeCode != source) {
+			activeCode = source
+			code.src = activeCode
+
+			if (codeSnip.className === "closed") {
+				codeSnip.className = "opened"
 				codeSnip.style.height = "250px"
-				codeSnip.style.opacity = "1"
-				codeSnip.style.visibility = "visible"
-			}, 600)
+			} else if (codeSnip.className === "opened") {
+				codeSnip.style.visibility = "hidden"
+				codeSnip.style.height = "1px"
+				codeSnip.style.opacity = "0"
+				setTimeout(() => {
+					codeSnip.style.height = "250px"
+					codeSnip.style.opacity = "1"
+					codeSnip.style.visibility = "visible"
+				}, 600)
+			}
 		}
 	})
 }

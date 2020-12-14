@@ -2771,11 +2771,21 @@ header img {
 #card-one {
 	background: url("../../images/burgerBuilderScreenshot.png");
 	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #card-two {
 	background: url("../../images/andrewtitle.png");
 	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* MOBILE CARDS */
+@media screen and (max-width: 736px) {
+	.card {
+		background-image: url("../../images/code-64.png") !important;
+		background-size: contain !important;
+	}
 }
 .project-head {
 	margin: 0 !important;
