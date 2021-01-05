@@ -2766,6 +2766,7 @@ header img {
 	background-color: rgba(0, 0, 0, 0.85);
 	padding-top: 15%;
 	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
 }
 
 #card-one {
@@ -2785,6 +2786,15 @@ header img {
 	.card {
 		background-image: url("../../images/code-64.png") !important;
 		background-size: contain !important;
+	}
+	.opened img {
+		height: 450px !important;
+		width: 100%;
+	}
+	.overlay {
+		border-radius: 10%;
+		background-color: rgba(0, 0, 0, 0.75);
+		color: rgba(255, 255, 255, 0.6);
 	}
 }
 .project-head {
